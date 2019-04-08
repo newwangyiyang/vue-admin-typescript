@@ -16,11 +16,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Prop } from 'vue-property-decorator'
 import { isExternal } from '@/utils/validate'
-
+import MyVue from '@/MyVue'
 @Component
-export default class Link extends Vue {
+export default class Link extends MyVue {
   @Prop({ required: true }) private to!: string;
 
   private isExternalLink(routePath: string) {

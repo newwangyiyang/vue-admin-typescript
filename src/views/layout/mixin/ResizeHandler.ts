@@ -1,10 +1,11 @@
-import { Component, Vue, Watch } from 'vue-property-decorator'
+import { Component, Watch } from 'vue-property-decorator'
 import { Getter, Action } from 'vuex-class'
 import { DeviceType, SlidebarState } from '@/interface/storeIF'
+import MyVue from '@/MyVue'
 const WIDTH = 992 // refer to Bootstrap's responsive design
 
 @Component
-export default class ResizeHandlerMixin extends Vue {
+export default class ResizeHandlerMixin extends MyVue {
   @Getter readonly device!: DeviceType
   @Getter readonly sidebar!: SlidebarState
   @Action readonly CloseSideBar!: Function

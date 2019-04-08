@@ -62,7 +62,7 @@
 
 <script lang="ts">
 import { isValidUsername } from '@/utils/validate'
-import { Component, Vue, Watch } from 'vue-property-decorator'
+import { Component, Watch } from 'vue-property-decorator'
 import { Route } from 'vue-router'
 import { Action } from 'vuex-class'
 import MyVue from '@/MyVue'

@@ -51,10 +51,10 @@
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator'
-
+import { Component } from 'vue-property-decorator'
+import MyVue from '@/MyVue'
 @Component
-export default class NotFound extends Vue {
+export default class NotFound extends MyVue {
   get message() {
     return '404 此页面不存在'
   }

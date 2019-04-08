@@ -5,10 +5,10 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
-
+import { Component } from 'vue-property-decorator'
+import MyVue from '@/MyVue'
 @Component
-export default class App extends Vue {}
+export default class App extends MyVue {}
 </script>
 <style lang="scss">
 //定义全局输入错误提示信息

@@ -22,12 +22,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator'
+import { Component, Watch } from 'vue-property-decorator'
+import MyVue from '@/MyVue'
 import { RouteRecord } from 'vue-router'
 import pathToRegexp from 'path-to-regexp'
 
 @Component
-export default class Breadcrumb extends Vue {
+export default class Breadcrumb extends MyVue {
   private breadcrumbs: RouteRecord[] = [];
 
   private created() {

@@ -60,9 +60,9 @@
 import path from 'path'
 import { Route } from 'vue-router'
 import { isExternal } from '@/utils/validate'
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Prop } from 'vue-property-decorator'
 import AppLink from './Link.vue'
-
+import MyVue from '@/MyVue'
 @Component({
   // Set 'name' here to prevent uglifyjs from causing recursive component not work
   // See https://medium.com/haiiro-io/element-component-name-with-vue-class-component-f3b435656561 for detail
@@ -71,7 +71,7 @@ import AppLink from './Link.vue'
     AppLink
   }
 })
-export default class SidebarItem extends Vue {
+export default class SidebarItem extends MyVue {
   @Prop({ required: true }) private item!: Route;
   @Prop({ default: false }) private isNest!: boolean;
   @Prop({ default: false }) private collapse!: boolean;

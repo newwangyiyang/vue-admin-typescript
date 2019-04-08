@@ -12,10 +12,10 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
-
+import { Component } from 'vue-property-decorator'
+import MyVue from '@/MyVue'
 @Component
-export default class AppMain extends Vue {}
+export default class AppMain extends MyVue {}
 </script>
 
 <style lang="scss" scoped>

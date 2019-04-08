@@ -69,8 +69,8 @@
 
 <script lang="ts">
 import { getList } from '@/api/table'
-import { Component, Vue } from 'vue-property-decorator'
-
+import { Component } from 'vue-property-decorator'
+import MyVue from '@/MyVue'
 @Component({
   filters: {
     statusFilter(status: string) {
@@ -83,7 +83,7 @@ import { Component, Vue } from 'vue-property-decorator'
     }
   }
 })
-export default class Table extends Vue {
+export default class Table extends MyVue {
   private list = null;
   private listLoading = true;
   private listQuery = {};

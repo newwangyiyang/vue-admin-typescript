@@ -22,7 +22,7 @@ export const constantRouterMap: RouteConfig[] = [
     component: () => import(/* webpackChunkName: "404" */ '@/views/404.vue'),
     meta: { hidden: true }
   },
-  {
+  { // 基础固定页面
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -33,39 +33,16 @@ export const constantRouterMap: RouteConfig[] = [
       component: () => import(/* webpackChunkName: "dashboard" */ '@/views/dashboard/index.vue')
     }]
   },
-  {
-    path: '/example',
+  { // 基础固定页面
+    path: '/show',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example', roles: ['user'] },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import(/* webpackChunkName: "table" */ '@/views/table/index.vue'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-  {
-    path: '/form',
-    component: Layout,
-    meta: {roles: ['admin']},
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import(/* webpackChunkName: "form" */ '@/views/form/index.vue'),
-        meta: { title: '表单', icon: 'form' }
-      }
-    ]
+    redirect: '/show',
+    children: [{
+      path: 'index',
+      component: () => import(/* webpackChunkName: "show" */ '@/views/show/index.vue'),
+      name: 'show',
+      meta: { title: '展示', icon: 'link'  }
+    }]
   },
   // {
   //   path: '/nested',
@@ -136,7 +113,41 @@ export const constantRouterMap: RouteConfig[] = [
 
 //根据权限分配的路由
 export const asyncRouterMap: RouteConfig[] = [
-  {
+  { // user
+    path: '/example',
+    component: Layout,
+    redirect: '/example/table',
+    name: 'Example',
+    meta: { title: 'Example', icon: 'example', roles: ['user'] },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import(/* webpackChunkName: "table" */ '@/views/table/index.vue'),
+        meta: { title: 'Table', icon: 'table' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
+        meta: { title: 'Tree', icon: 'tree' }
+      }
+    ]
+  },
+  { // user
+    path: '/form',
+    component: Layout,
+    meta: {roles: ['user']},
+    children: [
+      {
+        path: 'index',
+        name: 'Form',
+        component: () => import(/* webpackChunkName: "form" */ '@/views/form/index.vue'),
+        meta: { title: '表单', icon: 'form' }
+      }
+    ]
+  },
+  { // admin
     path: '/Admin',
     component: Layout,
     meta: { title: '管理员', icon: 'nested', roles: ['admin'] },

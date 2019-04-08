@@ -13,11 +13,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component } from 'vue-property-decorator'
 import { Getter } from 'vuex-class';
-
+import MyVue from '@/MyVue'
 @Component
-export default class Dashboard extends Vue {
+export default class Dashboard extends MyVue {
   @Getter readonly name!: string
   @Getter readonly roles!: string[]
 }

@@ -21,18 +21,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Prop } from 'vue-property-decorator'
 import SidebarItem from './SidebarItem.vue'
 import { Getter } from 'vuex-class'
 import { SlidebarState } from '@/interface/storeIF'
 import { RouteConfig } from 'vue-router';
-
+import MyVue from '@/MyVue'
 @Component({
   components: {
     SidebarItem
   }
 })
-export default class SideBar extends Vue {
+export default class SideBar extends MyVue {
   @Prop({ default: false }) private collapse!: boolean
 
   @Getter readonly sidebar!: SlidebarState

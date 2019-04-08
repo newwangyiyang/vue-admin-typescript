@@ -12,10 +12,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Prop } from 'vue-property-decorator'
+import MyVue from '@/MyVue'
 
 @Component
-export default class Hamburger extends Vue {
+export default class Hamburger extends MyVue {
   @Prop({ default: false }) private isActive!: boolean;
   @Prop({ default: null }) private toggleClick!: () => void;
 }

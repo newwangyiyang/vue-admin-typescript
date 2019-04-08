@@ -43,11 +43,11 @@
 <script lang="ts">
 import Breadcrumb from '@/components/Breadcrumb/index.vue'
 import Hamburger from '@/components/Hamburger/index.vue'
-import { Component, Vue } from 'vue-property-decorator'
+import { Component } from 'vue-property-decorator'
 
 import { Getter, Action } from 'vuex-class'
 import { SlidebarState } from '@/interface/storeIF';
-
+import MyVue from '@/MyVue'
 
 @Component({
   components: {
@@ -55,7 +55,7 @@ import { SlidebarState } from '@/interface/storeIF';
     Hamburger
   }
 })
-export default class Navbar extends Vue {
+export default class Navbar extends MyVue {
   @Getter readonly sidebar!: SlidebarState
   @Action readonly ToggleSideBar!: Function
 

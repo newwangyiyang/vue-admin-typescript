@@ -17,12 +17,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator'
+import { Component, Watch } from 'vue-property-decorator'
 import { Tree as ElTree } from 'element-ui'
 import { TreeData } from 'element-ui/types/tree'
-
+import MyVue from '@/MyVue'
 @Component
-export default class Tree extends Vue {
+export default class Tree extends MyVue {
   private filterText = '';
   private data2 = [{
     id: 1,
