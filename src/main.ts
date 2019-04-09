@@ -19,7 +19,7 @@ import '@/form/myFormValidate'
 import App from '@/App.vue'
 import store from '@/store'
 import router from '@/routes'
-// import '@/registerServiceWorker'  //devDependencies  添加该项依赖即可支持pwa   "yarn add -D @vue/cli-plugin-pwa"
+// import '@/registerServiceWorker'  //devDependencies  添加该项依赖即可支持pwa   "vue add @vue/cli-plugin-pwa"
 
 Vue
     .use(VeeValidate, {events: 'blur|input', fieldsBagName: 'fieldBags'})
