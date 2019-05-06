@@ -2,7 +2,7 @@ import router from './routes'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { Message } from 'element-ui'
-import { getToken } from '@/utils/auth'
+import { getToken, removeToken } from '@/utils/auth'
 import { Route } from 'vue-router'
 import store from './store'
 import _ from 'lodash'
@@ -39,6 +39,7 @@ router.beforeEach(async (to: Route, from: Route, next: any) => {
               })
             }catch(err) { // 请求接口异常则直接跳转到登录页面
               console.log(err)
+              removeToken()
               Message('登录异常，请重新登录')
               next({path: '/login'})
             }

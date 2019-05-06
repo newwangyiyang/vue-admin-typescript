@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { getToken } from '@/utils/auth'
 /**
  * process.env.VUE_APP_BASE_URL
  * Vue/cli3.0中配置全局环境变量
@@ -18,9 +18,9 @@ const axiosJson = axios.create({
 // request interceptor
 axiosJson.interceptors.request.use(config => {
   // Do something before request is sent
-  // if (store.getters.token) {
-  //   config.headers['X-Token'] = getToken() // 让每个请求携带token-- ['X-Token']为自定义key 请根据实际情况自行修改
-  // }
+  if (getToken()) {
+    config.headers['Token'] = getToken() // 让每个请求携带token-- ['X-Token']为自定义key 请根据实际情况自行修改
+  }
   return config
 }, error => {
   // Do something with request error
@@ -32,7 +32,7 @@ axiosJson.interceptors.response.use((res) => {
     if (res.status !== 200) {
       throw new Error('请求错误');
     }
-    return res.data;
+    return res;
   }, (error) => {
     return Promise.reject(error);
 });

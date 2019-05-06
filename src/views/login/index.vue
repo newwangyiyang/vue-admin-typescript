@@ -105,6 +105,7 @@ export default class Login extends MyVue {
           this.$router.push({ path: this.redirect || '/' })
         }).catch(() => {
           this.loading = false
+          this.$message('账号或密码错误');
         })
       }
     })

@@ -147,15 +147,27 @@ export const asyncRouterMap: RouteConfig[] = [
       }
     ]
   },
+  // { // admin
+  //   path: '/Admin',
+  //   component: Layout,
+  //   meta: { title: '管理员', icon: 'nested', roles: ['admin'] },
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       name: 'Admin',
+  //       component: () => import(/* webpackChunkName: "admin" */ '@/views/admin/index.vue'),
+  //     }
+  //   ]
+  // },
   { // admin
-    path: '/Admin',
+    path: '/AdminIndex',
     component: Layout,
-    meta: { title: '管理员', icon: 'nested', roles: ['admin'] },
+    meta: { title: '管理员', icon: 'table', roles: ['admin'] },
     children: [
       {
         path: 'index',
         name: 'Admin',
-        component: () => import(/* webpackChunkName: "admin" */ '@/views/admin/index.vue'),
+        component: () => import(/* webpackChunkName: "AdminIndex" */ '@/views/AdminIndex/index.vue'),
       }
     ]
   },
